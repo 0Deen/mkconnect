@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1f1f1f;
+}
+
+[dir="rtl"] .flip-rtl {
+  transform: scaleX(-1);
+}
+
+::selection {
+  background: #0b4aa2;
+  color: #1f1f1f;
+}
+
+*:focus-visible {
+  outline: 2px solid #0b4aa2;
+  outline-offset: 2px;
+}
+
+::placeholder {
+  color: #777777;
+  opacity: 1;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 3px rgba(11, 74, 162, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ----  MK Connection dark glass sections (ported from the  MK Connection Vite build) ----
+   Scoped under .mk-dark so the rest of the site's light theme is
+   untouched — these classes only apply inside the new  MK Connection showcase
+   sections on the homepage / destinations / about pages. */
+.mk-dark {
+  background-color: #05070d;
+  background-image:
+    radial-gradient(60% 60% at 20% 20%, rgba(242, 200, 121, 0.12) 0%, rgba(242, 200, 121, 0) 60%),
+    radial-gradient(50% 50% at 85% 15%, rgba(47, 84, 150, 0.18) 0%, rgba(47, 84, 150, 0) 60%);
+  color: rgba(255, 255, 255, 0.92);
+}
+.mk-dark .glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.mk-dark .glass-strong {
+  background: rgba(14, 18, 32, 0.75);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+}
+.mk-dark .dim-white { color: rgba(255, 255, 255, 0.65); }
+.mk-dark .dim-whiter { color: rgba(255, 255, 255, 0.45); }
+.mk-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e9c26d;
+}
+
+.container-content {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
